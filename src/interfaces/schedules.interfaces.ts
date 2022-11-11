@@ -1,3 +1,6 @@
+import { Props as ContainerProps } from '../components/ContainerSchedule';
+import { Props as ScheduleProps } from '../components/Schedule';
+
 export interface DataProps {
   id: string;
   name: string;
@@ -12,4 +15,9 @@ interface DaysProps {
   thursday: string[];
   friday: string[];
   saturday: string[];
+}
+
+export interface ScheduleHOCProps {
+  ({ courses }: ScheduleProps): JSX.Element;
+  Container: (Props: ContainerProps) => JSX.Element;
 }

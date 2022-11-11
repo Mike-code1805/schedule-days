@@ -1,4 +1,4 @@
-import styles from '../styles/containerSchedule/styles.module.scss';
+import styles from '../styles/containerSchedule/containerSchedule.module.css';
 
 export interface Props {
   title?: string;

@@ -3,10 +3,10 @@ import { hours } from '../data/hours';
 import { useSchedule } from '../hooks/useSchedule';
 import { DataProps } from '../interfaces/schedules.interfaces';
 
-import styles from '../styles/schedule/styles.module.scss';
+import styles from '../styles/schedule/schedule.module.css';
 import { ContainerSchedule } from './ContainerSchedule';
 
-interface Props {
+export interface Props {
   courses?: DataProps[];
 }
 
