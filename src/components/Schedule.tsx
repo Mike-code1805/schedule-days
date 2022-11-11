@@ -5,19 +5,13 @@ import { DataProps } from '../interfaces/schedules.interfaces';
 
 import styles from '../styles/schedule/styles.module.scss';
 import { ContainerSchedule } from './ContainerSchedule';
-import { useEffect } from 'react';
 
 interface Props {
   courses?: DataProps[];
 }
 
 export const Schedule = ({ courses }: Props) => {
-  const { data, setValueCourses } = useSchedule();
-
-  useEffect(() => {
-    if (!courses) return;
-    setValueCourses(courses);
-  }, [courses]);
+  const { data } = useSchedule(courses);
 
   return (
     <div className={styles['container']}>

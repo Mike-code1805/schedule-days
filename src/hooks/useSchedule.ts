@@ -10,9 +10,7 @@ export const useSchedule = (value: DataProps[] = coursesInitialValue) => {
   };
 
   useEffect(() => {
-    console.log('useEffect')
     setData(value);
-    console.log(data);
   }, [value]);
 
   return {
