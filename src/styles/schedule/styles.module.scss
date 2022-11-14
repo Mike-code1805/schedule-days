@@ -54,14 +54,12 @@
       &_caps {
         display: flex;
         flex-direction: row;
-        border-bottom: 1px solid $gray;
         &_text {
           width: 114px;
           height: auto;
           display: flex;
           justify-content: center;
           align-items: center;
-          // border-right: 1px solid $gray;
           &_hour {
             font-style: normal;
             font-weight: 700;
