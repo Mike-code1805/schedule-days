@@ -4,11 +4,11 @@ import { Props as ScheduleProps } from '../components/Schedule';
 export interface DataProps {
   id: string;
   name: string;
-  days: DaysProps;
+  days: DaysProps | any;
   color: string;
 }
 
-interface DaysProps {
+export interface DaysProps {
   monday: string[];
   tuesday: string[];
   wednesday: string[];
