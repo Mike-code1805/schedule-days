@@ -6,6 +6,9 @@ export interface DataProps {
   name: string;
   days: DaysProps | any;
   color: string;
+  semester?: string;
+  cat?: string;
+  career?: string;
 }
 
 export interface DaysProps {
@@ -15,6 +18,11 @@ export interface DaysProps {
   thursday: string[];
   friday: string[];
   saturday: string[];
+}
+
+export interface PropsHoursValue {
+  VisualValue: string;
+  dataValue: string;
 }
 
 export interface ScheduleHOCProps {
