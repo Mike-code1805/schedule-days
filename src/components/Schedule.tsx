@@ -12,16 +12,18 @@ export interface Props {
   backgroundColorSchedule?: string;
   borderRightSchedule?: boolean;
   borderBottomSchedule?: boolean;
+  onClickId?: (id: string) => void;
 }
-
+// () => btnDeleteCourse(value.id)
 export const Schedule = ({
   courses,
   backgroundColorSchedule,
   borderRightSchedule,
   borderBottomSchedule,
+  onClickId,
 }: Props) => {
   const { data } = useSchedule(courses && convertData(courses));
-
+  
   return (
     <div className={styles['container']}>
       <div
@@ -92,6 +94,7 @@ export const Schedule = ({
                       data={data}
                       daysVal={daysVal.dataValue}
                       daysPosition={value}
+                      onClickId={onClickId}
                     />
                   ) : value === 'tuesday' ? (
                     <DayContainerSchedule
