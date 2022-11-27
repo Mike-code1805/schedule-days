@@ -14,7 +14,7 @@ export interface Props {
   borderBottomSchedule?: boolean;
   onClickId?: (id: string) => void;
 }
-// () => btnDeleteCourse(value.id)
+
 export const Schedule = ({
   courses,
   backgroundColorSchedule,

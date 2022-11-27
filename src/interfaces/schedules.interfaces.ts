@@ -2,13 +2,20 @@ import { Props as ContainerProps } from '../components/ContainerSchedule';
 import { Props as ScheduleProps } from '../components/Schedule';
 
 export interface DataProps {
-  id: string;
+  _id: string;
   name: string;
   days: DaysProps | any;
   color: string;
   semester?: string;
   cat?: string;
-  career?: string;
+  career?: CareerProps;
+  course?: string;
+}
+
+interface CareerProps {
+  _id: string;
+  name: string;
+  img: string;
 }
 
 export interface DaysProps {

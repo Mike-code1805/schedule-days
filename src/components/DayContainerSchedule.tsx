@@ -38,7 +38,7 @@ export const DayContainerSchedule = ({
             key={keyIndex}
             title={value.name}
             backgroundColor={value.color}
-            idValue={value.id}
+            idValue={value._id}
             onClickId={onClickId}
           />
         ) : null
