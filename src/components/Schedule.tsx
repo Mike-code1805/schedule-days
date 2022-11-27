@@ -103,6 +103,7 @@ export const Schedule = ({
                       data={data}
                       daysVal={daysVal.dataValue}
                       daysPosition={value}
+                      onClickId={onClickId}
                     />
                   ) : value === 'wednesday' ? (
                     <DayContainerSchedule
@@ -111,6 +112,7 @@ export const Schedule = ({
                       data={data}
                       daysVal={daysVal.dataValue}
                       daysPosition={value}
+                      onClickId={onClickId}
                     />
                   ) : value === 'thursday' ? (
                     <DayContainerSchedule
@@ -119,6 +121,7 @@ export const Schedule = ({
                       data={data}
                       daysVal={daysVal.dataValue}
                       daysPosition={value}
+                      onClickId={onClickId}
                     />
                   ) : value === 'friday' ? (
                     <DayContainerSchedule
@@ -127,6 +130,7 @@ export const Schedule = ({
                       data={data}
                       daysVal={daysVal.dataValue}
                       daysPosition={value}
+                      onClickId={onClickId}
                     />
                   ) : value === 'saturday' ? (
                     <DayContainerSchedule
@@ -135,6 +139,7 @@ export const Schedule = ({
                       data={data}
                       daysVal={daysVal.dataValue}
                       daysPosition={value}
+                      onClickId={onClickId}
                     />
                   ) : null
                 )}
