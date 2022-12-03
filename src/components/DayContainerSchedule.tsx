@@ -17,6 +17,7 @@ export const DayContainerSchedule = ({
   daysPosition,
   onClickId,
 }: Props) => {
+  console.log({data});
   return (
     <div
       className={
