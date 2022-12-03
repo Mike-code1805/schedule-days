@@ -1,4 +1,4 @@
-import styles from '../styles/containerSchedule/styles.module.scss';
+import '../styles/containerSchedule/containerSchedule.css';
 
 export interface Props {
   title?: string;
@@ -16,10 +16,10 @@ export const ContainerSchedule = ({
   return (
     <div
       onClick={() => onClickId(idValue)}
-      className={styles.container}
+      className="containerSchedule"
       style={{ background: backgroundColor }}
     >
-      <h1 className={styles.container_text}>{title}</h1>
+      <h1 className="containerSchedule_text">{title}</h1>
     </div>
   );
 };

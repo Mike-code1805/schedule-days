@@ -1,8 +1,8 @@
 import { DataProps } from '../interfaces/schedules.interfaces';
-import styles from '../styles/schedule/styles.module.scss';
+import '../styles/schedule/schedule.css';
 import { ContainerSchedule } from './ContainerSchedule';
 
-interface Props {
+export interface Props {
   borderRightSchedule?: boolean;
   data: DataProps[];
   daysVal: string;
@@ -17,13 +17,12 @@ export const DayContainerSchedule = ({
   daysPosition,
   onClickId,
 }: Props) => {
-  console.log({data});
   return (
     <div
       className={
         daysPosition === 'saturday'
-          ? styles['container_schedule_lineTime_caps_mini_courseSat']
-          : styles['container_schedule_lineTime_caps_mini_course']
+          ? 'container_schedule_lineTime_caps_mini_courseSat'
+          : 'container_schedule_lineTime_caps_mini_course'
       }
       style={
         daysPosition !== 'saturday'
