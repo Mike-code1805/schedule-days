@@ -1,17 +1,25 @@
-import styles from '../styles/containerSchedule/styles.module.scss';
+import '../styles/containerSchedule/containerSchedule.css';
 
 export interface Props {
   title?: string;
   backgroundColor?: string;
+  idValue?: string;
+  onClickId?: any;
 }
 
 export const ContainerSchedule = ({
   title = 'Programación I',
   backgroundColor = 'red',
+  idValue,
+  onClickId,
 }: Props) => {
   return (
-    <div className={styles.container} style={{ background: backgroundColor }}>
-      <h1 className={styles.container_text}>{title}</h1>
+    <div
+      onClick={() => onClickId(idValue)}
+      className="containerSchedule"
+      style={{ background: backgroundColor }}
+    >
+      <h1 className="containerSchedule_text">{title}</h1>
     </div>
   );
 };

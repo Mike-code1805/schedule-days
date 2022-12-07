@@ -2,23 +2,31 @@ import { DataProps } from '../interfaces/schedules.interfaces';
 
 export const courses: DataProps[] = [
   {
-    id: '01',
-    name: 'Procesamiento de Lenguaje Natural',
+    _id: '01',
+    name: 'ASTRONOMÍA Y GEODESIAASTRONOMÍA Y GEODESIA ASTRONOMÍA Y GEODESIA',
     days: {
-      monday: ['7:00 - 8:00', '8:00 - 9:00'],
+      monday: ['07-08', '09-10'],
       tuesday: [],
-      wednesday: ['7:00 - 8:00', '8:00 - 9:00'],
-      thursday: ['7:00 - 8:00'],
-      friday: [],
-      saturday: ['7:00 - 8:00'],
+      wednesday: ['07-08', '08-09'],
+      thursday: ['07-09'],
+      friday: ['07-09'],
+      saturday: ['12-13'],
     },
-    color: 'red',
+    color: '#4F91DE',
+    career: {
+      _id: '6377d2ad72c4b90827c9f55b',
+      img: 'http://ci.unsaac.edu.pe/storage/entidad/logo.png',
+      name: 'Ingeniería Civil',
+    },
+    cat: 'EEP',
+    semester: '0',
+    course: 'IC556ZCI',
   },
   {
-    id: '02',
+    _id: '02',
     name: 'Programación II',
     days: {
-      monday: ['14:00 - 15:00', '15:00 - 16:00'],
+      monday: ['14-16'],
       tuesday: ['20:00 - 21:00'],
       wednesday: ['14:00 - 15:00', '15:00 - 16:00'],
       thursday: [],
@@ -28,20 +36,20 @@ export const courses: DataProps[] = [
     color: 'black',
   },
   {
-    id: '03',
+    _id: '03',
     name: 'Programación I',
     days: {
-      monday: ['7:00 - 8:00', '8:00 - 9:00'],
-      tuesday: [],
-      wednesday: ['7:00 - 8:00', '8:00 - 9:00'],
-      thursday: [],
+      monday: [],
+      tuesday: ['7:00 - 8:00', '8:00 - 9:00'],
+      wednesday: [],
+      thursday: ['8:00 - 9:00'],
       friday: ['8:00 - 9:00'],
       saturday: [],
     },
     color: 'green',
   },
   {
-    id: '04',
+    _id: '04',
     name: 'Programación I',
     days: {
       monday: [],
@@ -54,7 +62,7 @@ export const courses: DataProps[] = [
     color: 'pink',
   },
   {
-    id: '05',
+    _id: '05',
     name: 'Programación I',
     days: {
       monday: [],
@@ -67,7 +75,7 @@ export const courses: DataProps[] = [
     color: 'gold',
   },
   {
-    id: '06',
+    _id: '06',
     name: 'Programación I',
     days: {
       monday: [],
@@ -80,7 +88,7 @@ export const courses: DataProps[] = [
     color: 'orange',
   },
   {
-    id: '07',
+    _id: '07',
     name: 'Programación I',
     days: {
       monday: [],
@@ -96,7 +104,7 @@ export const courses: DataProps[] = [
 
 export const coursesTest: DataProps[] = [
   {
-    id: '01',
+    _id: '01',
     name: 'Procesamiento de Lenguaje Natural',
     days: {
       monday: [],
@@ -109,7 +117,7 @@ export const coursesTest: DataProps[] = [
     color: 'red',
   },
   {
-    id: '02',
+    _id: '02',
     name: 'Programación II',
     days: {
       monday: ['14:00 - 15:00', '15:00 - 16:00'],
@@ -122,7 +130,7 @@ export const coursesTest: DataProps[] = [
     color: 'black',
   },
   {
-    id: '03',
+    _id: '03',
     name: 'Programación I',
     days: {
       monday: ['7:00 - 8:00', '8:00 - 9:00'],
@@ -135,7 +143,7 @@ export const coursesTest: DataProps[] = [
     color: 'green',
   },
   {
-    id: '04',
+    _id: '04',
     name: 'Programación I',
     days: {
       monday: [],
@@ -148,7 +156,7 @@ export const coursesTest: DataProps[] = [
     color: 'pink',
   },
   {
-    id: '05',
+    _id: '05',
     name: 'Programación I',
     days: {
       monday: [],
@@ -161,7 +169,7 @@ export const coursesTest: DataProps[] = [
     color: 'gold',
   },
   {
-    id: '06',
+    _id: '06',
     name: 'Programación I',
     days: {
       monday: [],
@@ -174,7 +182,7 @@ export const coursesTest: DataProps[] = [
     color: 'orange',
   },
   {
-    id: '07',
+    _id: '07',
     name: 'Programación I',
     days: {
       monday: [],
@@ -190,7 +198,7 @@ export const coursesTest: DataProps[] = [
 
 export const coursesInitialValue: DataProps[] = [
   {
-    id: '',
+    _id: '',
     name: '',
     days: {
       monday: [],

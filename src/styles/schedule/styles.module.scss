@@ -1,10 +1,6 @@
 @use '../../scss/global' as *;
 
 .container {
-  display: flex;
-  border: 1px solid #000;
-  width: 1200px;
-  height: 750;
   &_schedule {
     background-color: $white;
     margin: 2%;
@@ -58,14 +54,12 @@
       &_caps {
         display: flex;
         flex-direction: row;
-        border-bottom: 1px solid $gray;
         &_text {
           width: 114px;
           height: auto;
           display: flex;
           justify-content: center;
           align-items: center;
-          // border-right: 1px solid $gray;
           &_hour {
             font-style: normal;
             font-weight: 700;

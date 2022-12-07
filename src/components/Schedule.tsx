@@ -1,179 +1,138 @@
 import { days } from '../data/days';
-import { hours } from '../data/hours';
+import hours from '../data/hours';
+import { convertData } from '../functions/convertData';
 import { useSchedule } from '../hooks/useSchedule';
 import { DataProps } from '../interfaces/schedules.interfaces';
 
-import styles from '../styles/schedule/styles.module.scss';
-import { ContainerSchedule } from './ContainerSchedule';
-import { useEffect } from 'react';
+import '../styles/schedule/schedule.css';
+import { DayContainerSchedule } from './DayContainerSchedule';
 
-interface Props {
+export interface Props {
   courses?: DataProps[];
+  backgroundColorSchedule?: string;
+  borderRightSchedule?: boolean;
+  borderBottomSchedule?: boolean;
+  onClickId?: (id: string) => void;
 }
 
-export const Schedule = ({ courses }: Props) => {
-  const { data, setValueCourses } = useSchedule();
-
-  useEffect(() => {
-    if (!courses) return;
-    setValueCourses(courses);
-  }, [courses]);
+export const Schedule = ({
+  courses,
+  backgroundColorSchedule,
+  borderRightSchedule,
+  borderBottomSchedule,
+  onClickId,
+}: Props) => {
+  const { data } = useSchedule(courses && convertData(courses));
 
   return (
-    <div className={styles['container']}>
-      <div className={styles['container_schedule']}>
-        <div className={styles['container_schedule_top']}></div>
-        <div className={styles['container_schedule_header']}>
-          <div className={styles['container_schedule_header_horario']}>
-            <h1 className={styles['container_schedule_header_horario_text']}>
-              Horario
-            </h1>
+    <div>
+      <div
+        className="container_schedule"
+        style={{ backgroundColor: backgroundColorSchedule }}
+      >
+        <div className="container_schedule_top"></div>
+        <div className="container_schedule_header">
+          <div className="container_schedule_header_horario">
+            <h1 className="container_schedule_header_horario_text">Horario</h1>
           </div>
-          {days.map((value, key) => (
+          {days.map(value => (
             <div
-              key={key}
+              key={value}
               className={
                 value === 'Sábado'
-                  ? styles['container_schedule_header_capsSab']
-                  : styles['container_schedule_header_caps']
+                  ? 'container_schedule_header_capsSab'
+                  : 'container_schedule_header_caps'
               }
             >
-              <h1 className={styles['container_schedule_header_caps_text']}>
-                {value}
-              </h1>
+              <h1 className="container_schedule_header_caps_text">{value}</h1>
             </div>
           ))}
         </div>
-        <div className={styles['container_schedule_lineTime']}>
-          {hours.map((daysVal) => (
+        <div className="container_schedule_lineTime">
+          {hours.map(daysVal => (
             <div
-              key={daysVal}
+              key={daysVal.VisualValue}
               className={
-                daysVal === '20:00 - 21:00'
-                  ? styles['container_schedule_lineTime_capsEnd']
-                  : styles['container_schedule_lineTime_caps']
+                daysVal.VisualValue === '20:00 - 21:00'
+                  ? 'container_schedule_lineTime_capsEnd'
+                  : 'container_schedule_lineTime_caps'
+              }
+              style={
+                daysVal.VisualValue !== '20:00 - 21:00'
+                  ? {
+                      borderBottom: borderBottomSchedule
+                        ? '1px solid #D4D4D4'
+                        : '',
+                    }
+                  : {}
               }
             >
-              <div className={styles['container_schedule_lineTime_caps_text']}>
-                <h1
-                  className={
-                    styles['container_schedule_lineTime_caps_text_hour']
-                  }
-                >
-                  {daysVal}
+              <div
+                className="container_schedule_lineTime_caps_text"
+                style={{
+                  borderRight: borderRightSchedule ? '1px solid #D4D4D4' : '',
+                }}
+              >
+                <h1 className="container_schedule_lineTime_caps_text_hour">
+                  {daysVal.VisualValue}
                 </h1>
               </div>
-              <div className={styles['container_schedule_lineTime_caps_mini']}>
-                {Object.keys(data[0].days).map((value) =>
+              <div className="container_schedule_lineTime_caps_mini">
+                {Object.keys(data[0].days).map((value, keyInd) =>
                   value === 'monday' ? (
-                    <>
-                      <div
-                        className={
-                          styles['container_schedule_lineTime_caps_mini_course']
-                        }
-                      >
-                        {data.map((value, keyIndex) =>
-                          value.days.monday.includes(`${daysVal}`) ? (
-                            <ContainerSchedule
-                              key={keyIndex}
-                              title={value.name}
-                              backgroundColor={value.color}
-                            />
-                          ) : null
-                        )}
-                      </div>
-                    </>
+                    <DayContainerSchedule
+                      key={keyInd}
+                      borderRightSchedule={borderRightSchedule}
+                      data={data}
+                      daysVal={daysVal.dataValue}
+                      daysPosition={value}
+                      onClickId={onClickId}
+                    />
                   ) : value === 'tuesday' ? (
-                    <>
-                      <div
-                        className={
-                          styles['container_schedule_lineTime_caps_mini_course']
-                        }
-                      >
-                        {data.map((value, keyIndex) =>
-                          value.days.tuesday.includes(`${daysVal}`) ? (
-                            <ContainerSchedule
-                              key={keyIndex}
-                              title={value.name}
-                              backgroundColor={value.color}
-                            />
-                          ) : null
-                        )}
-                      </div>
-                    </>
+                    <DayContainerSchedule
+                      key={keyInd}
+                      borderRightSchedule={borderRightSchedule}
+                      data={data}
+                      daysVal={daysVal.dataValue}
+                      daysPosition={value}
+                      onClickId={onClickId}
+                    />
                   ) : value === 'wednesday' ? (
-                    <>
-                      <div
-                        className={
-                          styles['container_schedule_lineTime_caps_mini_course']
-                        }
-                      >
-                        {data.map((value, keyIndex) =>
-                          value.days.wednesday.includes(`${daysVal}`) ? (
-                            <ContainerSchedule
-                              key={keyIndex}
-                              title={value.name}
-                              backgroundColor={value.color}
-                            />
-                          ) : null
-                        )}
-                      </div>
-                    </>
+                    <DayContainerSchedule
+                      key={keyInd}
+                      borderRightSchedule={borderRightSchedule}
+                      data={data}
+                      daysVal={daysVal.dataValue}
+                      daysPosition={value}
+                      onClickId={onClickId}
+                    />
                   ) : value === 'thursday' ? (
-                    <>
-                      <div
-                        className={
-                          styles['container_schedule_lineTime_caps_mini_course']
-                        }
-                      >
-                        {data.map((value, keyIndex) =>
-                          value.days.thursday.includes(`${daysVal}`) ? (
-                            <ContainerSchedule
-                              key={keyIndex}
-                              title={value.name}
-                              backgroundColor={value.color}
-                            />
-                          ) : null
-                        )}
-                      </div>
-                    </>
+                    <DayContainerSchedule
+                      key={keyInd}
+                      borderRightSchedule={borderRightSchedule}
+                      data={data}
+                      daysVal={daysVal.dataValue}
+                      daysPosition={value}
+                      onClickId={onClickId}
+                    />
                   ) : value === 'friday' ? (
-                    <>
-                      <div
-                        className={
-                          styles['container_schedule_lineTime_caps_mini_course']
-                        }
-                      >
-                        {data.map((value, keyIndex) =>
-                          value.days.friday.includes(`${daysVal}`) ? (
-                            <ContainerSchedule
-                              key={keyIndex}
-                              title={value.name}
-                              backgroundColor={value.color}
-                            />
-                          ) : null
-                        )}
-                      </div>
-                    </>
+                    <DayContainerSchedule
+                      key={keyInd}
+                      borderRightSchedule={borderRightSchedule}
+                      data={data}
+                      daysVal={daysVal.dataValue}
+                      daysPosition={value}
+                      onClickId={onClickId}
+                    />
                   ) : value === 'saturday' ? (
-                    <>
-                      <div
-                        className={
-                          styles[
-                            'container_schedule_lineTime_caps_mini_courseSat'
-                          ]
-                        }
-                      >
-                        {data.map((value) =>
-                          value.days.saturday.includes(`${daysVal}`) ? (
-                            <ContainerSchedule
-                              title={value.name}
-                              backgroundColor={value.color}
-                            />
-                          ) : null
-                        )}
-                      </div>
-                    </>
+                    <DayContainerSchedule
+                      key={keyInd}
+                      borderRightSchedule={borderRightSchedule}
+                      data={data}
+                      daysVal={daysVal.dataValue}
+                      daysPosition={value}
+                      onClickId={onClickId}
+                    />
                   ) : null
                 )}
               </div>
