@@ -7,7 +7,7 @@
   border-radius: 5px;
   display: flex;
   margin-top: 5px;
-  justify-content: center;
+  justify-content: center;  
   &_text {
     font-family: $open-sans;
     justify-content: center;
@@ -16,8 +16,5 @@
     font-weight: 700;
     font-size: 11px;
     text-align: center;
-    :hover {
-      cursor: pointer;
-    }
   }
 }
