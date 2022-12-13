@@ -3,7 +3,7 @@ import { DataProps } from '../interfaces/schedules.interfaces';
 export const courses: DataProps[] = [
   {
     _id: '01',
-    name: 'ASTRONOMÍA Y GEODESIAASTRONOMÍA Y GEODESIA ASTRONOMÍA Y GEODESIA',
+    name: 'ASTRONOMÍA Y GEOLOGÍA',
     days: {
       monday: ['07-08', '09-10'],
       tuesday: [],
