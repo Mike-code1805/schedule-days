@@ -40,8 +40,8 @@ export const courses: DataProps[] = [
     name: 'Programación I',
     days: {
       monday: [],
-      tuesday: ['7:00 - 8:00', '8:00 - 9:00'],
-      wednesday: [],
+      tuesday: ['07-08', '8:00 - 9:00'],
+      wednesday: ['07-08'],
       thursday: ['8:00 - 9:00'],
       friday: ['8:00 - 9:00'],
       saturday: [],
