@@ -30,7 +30,7 @@ export const courses: DataProps[] = [
       tuesday: ['20:00 - 21:00'],
       wednesday: ['14:00 - 15:00', '15:00 - 16:00'],
       thursday: [],
-      friday: [],
+      friday: ['22-24'],
       saturday: ['15:00 - 16:00'],
     },
     color: 'black',

@@ -53,7 +53,7 @@ export const Schedule = ({
             <div
               key={daysVal.VisualValue}
               className={
-                daysVal.VisualValue === '20:00 - 21:00'
+                daysVal.VisualValue === '23:00 - 24:00'
                   ? 'container_schedule_lineTime_capsEnd'
                   : 'container_schedule_lineTime_caps'
               }
